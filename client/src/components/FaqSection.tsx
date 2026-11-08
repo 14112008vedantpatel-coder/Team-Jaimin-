@@ -1,158 +1,182 @@
 import React, { useState } from 'react';
-import { Search, ChevronDown, HelpCircle, MessageSquare } from 'lucide-react';
-import { useSite } from '../context/SiteContext';
+import {
+  Scale,
+  Shield,
+  Clock,
+  Smartphone,
+  Wallet,
+  ChevronDown,
+  ChevronRight,
+  Info,
+  HelpCircle,
+} from 'lucide-react';
+
+interface FaqItemData {
+  id: string;
+  category: string;
+  question: string;
+  answer: string;
+  iconBg: string;
+  icon: React.ReactNode;
+}
 
 export const FaqSection: React.FC = () => {
-  const { siteData, getWhatsAppUrl } = useSite();
-  const faqs = siteData?.faqs || [];
-  const categories = siteData?.faq_categories || [
-    'About the Work',
-    'Getting Started',
-    'Money & Earnings',
-    'Company & Trust',
-    'Support & Training',
+  const faqData: FaqItemData[] = [
+    // Category 1: ABOUT THE WORK
+    {
+      id: 'q1',
+      category: 'ABOUT THE WORK',
+      question: 'Is this work legal & registered?',
+      answer:
+        'Yes. It is run under TEAM JAIMIN digital business and learning platform, registered with the Ministry of Corporate Affairs, compliant with the Consumer Protection (Direct Selling) Rules, 2021.',
+      iconBg: 'bg-purple-100 text-purple-700 border border-purple-200',
+      icon: <Scale className="w-4 h-4 text-purple-700" />,
+    },
+    {
+      id: 'q2',
+      category: 'ABOUT THE WORK',
+      question: 'Are there any joining fees or hidden charges?',
+      answer:
+        'No. There is zero joining fee and zero compulsory product purchase with TEAM JAIMIN. You earn commissions strictly based on verified customer transactions, fully compliant with Indian Direct Selling regulations.',
+      iconBg: 'bg-emerald-100 text-emerald-700 border border-emerald-200',
+      icon: <Shield className="w-4 h-4 text-emerald-700" />,
+    },
+
+    // Category 2: GETTING STARTED
+    {
+      id: 'q3',
+      category: 'GETTING STARTED',
+      question: 'How much time do I need daily?',
+      answer:
+        '1 to 2 hours daily is sufficient. Most of our students and working professionals work during evening hours or weekends at their own schedule.',
+      iconBg: 'bg-blue-100 text-blue-700 border border-blue-200',
+      icon: <Clock className="w-4 h-4 text-blue-700" />,
+    },
+    {
+      id: 'q4',
+      category: 'GETTING STARTED',
+      question: 'Do I need a laptop or prior marketing experience?',
+      answer:
+        'No. A basic smartphone with an internet connection is all you need. TEAM JAIMIN provides step-by-step training from scratch from day one.',
+      iconBg: 'bg-cyan-100 text-cyan-700 border border-cyan-200',
+      icon: <Smartphone className="w-4 h-4 text-cyan-700" />,
+    },
+
+    // Category 3: MONEY
+    {
+      id: 'q5',
+      category: 'MONEY',
+      question: 'How do I receive my earnings & payouts?',
+      answer:
+        'Earnings are transferred directly to your verified bank account weekly every Tuesday via NEFT/IMPS with statutory TDS deductions and official invoice slips.',
+      iconBg: 'bg-amber-100 text-amber-700 border border-amber-200',
+      icon: <Wallet className="w-4 h-4 text-amber-700" />,
+    },
   ];
 
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const [openFaqId, setOpenFaqId] = useState<string | null>(faqs[0]?.id || null);
+  const [openIds, setOpenIds] = useState<Record<string, boolean>>({ q1: true });
 
-  const toggleFaq = (id: string) => {
-    setOpenFaqId(prev => (prev === id ? null : id));
+  const toggle = (id: string) => {
+    setOpenIds((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
   };
 
-  const filteredFaqs = faqs.filter(f => {
-    const matchesCategory = selectedCategory === 'All' || f.category === selectedCategory;
-    const matchesSearch =
-      f.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      f.answer.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  const categories = ['ABOUT THE WORK', 'GETTING STARTED', 'MONEY'];
 
   return (
-    <section id="faqs" className="py-20 lg:py-28 bg-[#FAF9F6] border-b border-[#EAE8E2]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="questions" className="py-16 lg:py-24 bg-white border-b border-slate-200">
+      <div className="max-w-xl sm:max-w-4xl lg:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#EAE8E2] text-[11px] font-bold text-[#6747C7] uppercase tracking-wider mb-3">
-            <HelpCircle className="w-3.5 h-3.5" />
-            Direct Answers
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          
+          {/* Left Column: Heading, intro & desktop disclaimer card */}
+          <div className="lg:col-span-5 text-left space-y-4 lg:space-y-6 lg:sticky lg:top-28">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>Clarifications & Transparency</span>
+            </div>
+
+            <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+              Frequently Asked Questions
+            </h2>
+
+            <p className="text-xs sm:text-sm lg:text-base text-slate-600 leading-relaxed">
+              Find transparent, honest answers regarding daily schedule requirements, payouts, legal compliance, and training support.
+            </p>
+
+            {/* Disclaimer Card */}
+            <div className="hidden lg:flex items-start gap-3 p-5 bg-slate-50 rounded-2xl border border-slate-200 text-xs text-slate-600 leading-relaxed shadow-xs">
+              <Info className="w-5 h-5 text-slate-700 shrink-0 mt-0.5" />
+              <p>
+                <strong className="text-slate-900">Earnings Disclaimer:</strong> Results shown on this website are from real individual team members. Income depends strictly on your personal effort, consultative skills and time invested.
+              </p>
+            </div>
           </div>
-          <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-bold text-[#10100D] tracking-tight mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-sm text-[#696969] leading-relaxed">
-            Everything you need to know about the opportunity, legal compliance, time requirements, and earnings structure.
-          </p>
-        </div>
 
-        {/* Live Search Bar */}
-        <div className="relative mb-6">
-          <Search className="w-5 h-5 text-[#696969] absolute left-4 top-1/2 -translate-y-1/2" />
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search questions by keyword (e.g. legal, joining fee, time, TDS)..."
-            className="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-white border border-[#EAE8E2] text-xs sm:text-sm text-[#10100D] focus:outline-hidden focus:border-[#DDF77B] focus:ring-2 focus:ring-[#DDF77B]/20 transition-all shadow-xs"
-          />
-        </div>
-
-        {/* Category Filters */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 mb-8 no-scrollbar">
-          <button
-            onClick={() => setSelectedCategory('All')}
-            className={`shrink-0 px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
-              selectedCategory === 'All'
-                ? 'bg-[#10100D] text-[#DDF77B]'
-                : 'bg-white text-[#171717] border border-[#EAE8E2] hover:bg-[#FAF9F6]'
-            }`}
-          >
-            All Questions ({faqs.length})
-          </button>
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`shrink-0 px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
-                selectedCategory === cat
-                  ? 'bg-[#10100D] text-[#DDF77B]'
-                  : 'bg-white text-[#171717] border border-[#EAE8E2] hover:bg-[#FAF9F6]'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {/* Accordion List */}
-        {filteredFaqs.length === 0 ? (
-          <div className="text-center py-12 bg-white rounded-3xl border border-[#EAE8E2] p-6">
-            <p className="text-sm text-[#696969] mb-3">No matching questions found.</p>
-            <button
-              onClick={() => { setSearchQuery(''); setSelectedCategory('All'); }}
-              className="text-xs font-bold text-[#6747C7] hover:underline"
-            >
-              Reset Search & Filters
-            </button>
-          </div>
-        ) : (
-          <div className="space-y-3">
-            {filteredFaqs.map((faq, idx) => {
-              const isOpen = openFaqId === faq.id;
+          {/* Right Column: Grouped Questions Accordion */}
+          <div className="lg:col-span-7 space-y-6">
+            {categories.map((cat) => {
+              const items = faqData.filter((f) => f.category === cat);
               return (
-                <div
-                  key={faq.id || idx}
-                  className="bg-white border border-[#EAE8E2] rounded-2xl overflow-hidden transition-all duration-200"
-                >
-                  <button
-                    onClick={() => toggleFaq(faq.id)}
-                    className="w-full px-6 py-4 text-left flex items-center justify-between gap-4 hover:bg-[#FAF9F6] transition-colors"
-                  >
-                    <span className="font-editorial text-base sm:text-lg font-bold text-[#10100D]">
-                      {faq.question}
-                    </span>
-                    <span className="p-1 rounded-full bg-[#FAF9F6] border border-[#EAE8E2] shrink-0">
-                      <ChevronDown
-                        className={`w-4 h-4 text-[#10100D] transition-transform duration-200 ${
-                          isOpen ? 'rotate-180' : ''
-                        }`}
-                      />
-                    </span>
-                  </button>
+                <div key={cat} className="space-y-2 text-left">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block px-1">
+                    {cat}
+                  </span>
 
-                  {isOpen && (
-                    <div className="px-6 pb-5 pt-1 text-xs sm:text-sm text-[#696969] leading-relaxed border-t border-[#EAE8E2]/60 animate-fade-in">
-                      <p className="mb-2">{faq.answer}</p>
-                      <span className="inline-block text-[10px] font-bold text-[#6747C7] uppercase tracking-wider bg-[#FAF9F6] px-2 py-0.5 rounded">
-                        Category: {faq.category}
-                      </span>
-                    </div>
-                  )}
+                  <div className="bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden shadow-xs divide-y divide-slate-200">
+                    {items.map((item) => {
+                      const isOpen = !!openIds[item.id];
+                      return (
+                        <div key={item.id} className="transition-colors">
+                          <button
+                            onClick={() => toggle(item.id)}
+                            className="w-full p-4 sm:p-5 flex items-center justify-between gap-3 text-left hover:bg-white transition-colors cursor-pointer"
+                          >
+                            <div className="flex items-center gap-3">
+                              <div
+                                className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 shadow-xs ${item.iconBg}`}
+                              >
+                                {item.icon}
+                              </div>
+                              <span className="text-sm font-bold text-slate-900 leading-snug">
+                                {item.question}
+                              </span>
+                            </div>
+
+                            <div className="text-slate-400 shrink-0">
+                              {isOpen ? (
+                                <ChevronDown className="w-5 h-5 text-slate-900" />
+                              ) : (
+                                <ChevronRight className="w-5 h-5 text-slate-400" />
+                              )}
+                            </div>
+                          </button>
+
+                          {isOpen && (
+                            <div className="px-5 pb-5 pt-1 pl-16 text-xs sm:text-sm text-slate-600 leading-relaxed animate-fade-in bg-white">
+                              <p>{item.answer}</p>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               );
             })}
-          </div>
-        )}
 
-        {/* Still have questions banner */}
-        <div className="mt-12 text-center bg-white border border-[#EAE8E2] rounded-3xl p-6 sm:p-8">
-          <h4 className="font-editorial text-lg font-bold text-[#10100D] mb-1">
-            Have a specific question not covered here?
-          </h4>
-          <p className="text-xs text-[#696969] mb-4">
-            Feel free to send a direct message on WhatsApp. No questions are off-limits.
-          </p>
-          <a
-            href={getWhatsAppUrl('general', 'Hello Jamin! I have a specific question that was not listed in the FAQ.')}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#DDF77B] text-[#10100D] font-bold text-xs hover:bg-[#CFF46B] transition-colors border border-[#10100D]/10"
-          >
-            <MessageSquare className="w-3.5 h-3.5 fill-[#10100D]" />
-            <span>Ask Jamin on WhatsApp</span>
-          </a>
+            {/* Mobile Only Bottom Disclaimer */}
+            <div className="mt-8 pt-6 border-t border-slate-200 flex lg:hidden items-start gap-3 text-xs text-slate-500 leading-relaxed text-left">
+              <Info className="w-5 h-5 text-slate-700 shrink-0 mt-0.5" />
+              <p>
+                <strong className="text-slate-900">Earnings Disclaimer:</strong> Results are from individual team members. Income depends on your effort, skills and time.
+              </p>
+            </div>
+
+          </div>
+
         </div>
 
       </div>

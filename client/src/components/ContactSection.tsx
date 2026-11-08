@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { MessageSquare, Phone, Mail, Clock, MapPin, Send, CheckCircle2, ShieldCheck, ArrowUpRight, AlertCircle } from 'lucide-react';
+import { MessageSquare, CheckCircle2, AlertCircle } from 'lucide-react';
 import { useSite } from '../context/SiteContext';
 import { submitEnquiry } from '../api/client';
 
 export const ContactSection: React.FC = () => {
   const { siteData, getWhatsAppUrl } = useSite();
   const contact = siteData?.site_settings?.contact;
-  const leader = siteData?.leader_profile;
+  const phoneNumber = contact?.display_phone || '+91 63554 22503';
 
-  // Form State
+  const [showInquiryForm, setShowInquiryForm] = useState(false);
   const [formData, setFormData] = useState({
     full_name: '',
     mobile: '',
@@ -41,11 +41,11 @@ export const ContactSection: React.FC = () => {
       return;
     }
     if (!formData.city.trim()) {
-      setFormError('Please provide your city.');
+      setFormError('Please enter your city.');
       return;
     }
     if (!formData.consent_given) {
-      setFormError('Consent under the Digital Personal Data Protection Act, 2023 is required to contact you.');
+      setFormError('Consent under the DPDP Act is required.');
       return;
     }
 
@@ -58,318 +58,220 @@ export const ContactSection: React.FC = () => {
           message: res.message,
           whatsapp_redirect_url: res.whatsapp_redirect_url,
         });
-        setFormData({
-          full_name: '',
-          mobile: '',
-          city: '',
-          email: '',
-          area_of_interest: 'College Student - Flexible Part-Time',
-          preferred_contact: 'WhatsApp',
-          message: '',
-          consent_given: true,
-        });
       }
     } catch (err: any) {
-      setFormError(err.message || 'Error submitting enquiry. Please check your network.');
+      setFormError(err.message || 'Error sending request.');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-white border-b border-[#EAE8E2]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="whatsapp" className="py-20 lg:py-28 bg-[#0B0F19] text-white border-t border-slate-800">
+      <div className="max-w-xl sm:max-w-4xl lg:max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF9F6] border border-[#EAE8E2] text-[11px] font-bold text-emerald-800 uppercase tracking-wider mb-3">
-            <MessageSquare className="w-3.5 h-3.5 fill-emerald-700" />
-            Direct Communication
-          </div>
-          <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-bold text-[#10100D] tracking-tight mb-4">
-            Let's Talk on WhatsApp
-          </h2>
-          <p className="text-sm text-[#696969] leading-relaxed">
-            Have questions about the business opportunity, partner company, training schedules, or joining process? Connect with Jamin Patel directly.
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           
-          {/* Left Column: Direct WhatsApp & Contact Card */}
-          <div className="lg:col-span-5 space-y-6">
+          {/* Left Column: Direct WhatsApp Connection */}
+          <div className="lg:col-span-6 text-left space-y-6">
             
-            {/* Primary WhatsApp Quick Launch Hero Box */}
-            <div className="bg-[#10100D] text-white rounded-3xl p-7 sm:p-8 relative overflow-hidden shadow-lg">
-              <div className="absolute top-0 right-0 w-44 h-44 bg-[#DDF77B]/15 rounded-full blur-2xl pointer-events-none" />
-
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#DDF77B] text-[#10100D] flex items-center justify-center font-bold">
-                  <MessageSquare className="w-6 h-6 fill-[#10100D]" />
-                </div>
-                <div>
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                    <span className="text-xs font-semibold text-emerald-400">Available on WhatsApp</span>
-                  </div>
-                  <h3 className="font-editorial text-xl font-bold text-white">
-                    {leader?.name || 'Jamin Patel'}
-                  </h3>
-                </div>
+            {/* Jaimin Personal Avatar Badge */}
+            <div className="flex items-center gap-3.5">
+              <div className="relative">
+                <img
+                  src="/jaimin-portrait.jpg"
+                  alt="JAIMIN"
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover object-top border-2 border-emerald-400 shadow-xl bg-slate-900"
+                />
+                <span className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full border-2 border-slate-900" />
               </div>
-
-              <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed mb-6">
-                Skip lengthy emails. Get direct, transparent answers directly on your mobile within 15–30 minutes during working hours.
-              </p>
-
-              <div className="p-3 bg-white/10 rounded-2xl border border-white/10 mb-6 text-xs flex items-center justify-between">
-                <span className="text-neutral-400">WhatsApp:</span>
-                <span className="font-mono font-bold text-[#DDF77B]">
-                  {contact?.display_phone || '+91 98765 43210'}
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 block">
+                  Direct Founder & Mentor
                 </span>
+                <h3 className="font-editorial text-lg sm:text-xl font-bold text-white">JAIMIN PATEL</h3>
+                <p className="text-[11px] text-slate-300 font-semibold flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  Active & Replying on WhatsApp
+                </p>
               </div>
+            </div>
 
+            {/* Title */}
+            <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-white">
+              Talk to me on
+              <br />
+              <span className="text-emerald-400">WhatsApp</span>
+            </h2>
+
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-sans-body max-w-md">
+              Want to learn how our digital business model works, see recent payouts, or get started? Message founder JAIMIN directly.
+            </p>
+
+            {/* Big Display Phone Number */}
+            <div>
               <a
                 href={getWhatsAppUrl('hero')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 px-6 rounded-2xl bg-[#DDF77B] text-[#10100D] font-bold text-xs sm:text-sm hover:bg-[#CFF46B] transition-all flex items-center justify-center gap-2 shadow-sm"
+                className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-bold text-white hover:text-emerald-400 transition-colors block tracking-tight"
               >
-                <MessageSquare className="w-4 h-4 fill-[#10100D]" />
-                <span>Message Jamin on WhatsApp</span>
-                <ArrowUpRight className="w-4 h-4 opacity-70" />
+                {phoneNumber}
               </a>
             </div>
 
-            {/* Contact Details & Availability */}
-            <div className="bg-[#FAF9F6] border border-[#EAE8E2] rounded-3xl p-6 sm:p-7 space-y-4">
-              <h4 className="font-editorial text-base font-bold text-[#10100D]">
-                Office & Hours Information
-              </h4>
+            {/* Big WhatsApp CTA Button */}
+            <div className="space-y-4 max-w-md">
+              <a
+                href={getWhatsAppUrl('hero')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-4 px-6 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm sm:text-base transition-all flex items-center justify-center gap-2.5 shadow-lg active:scale-98 hover:scale-102"
+              >
+                <MessageSquare className="w-5 h-5 fill-white text-white" />
+                <span>Message JAIMIN on WhatsApp</span>
+              </a>
 
-              <div className="space-y-3 text-xs text-[#696969]">
-                <div className="flex items-start gap-3">
-                  <Clock className="w-4 h-4 text-[#10100D] shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-[#10100D] block">Consultation Hours:</strong>
-                    {contact?.hours || 'Monday – Saturday: 10:00 AM – 8:00 PM IST'}
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Mail className="w-4 h-4 text-[#10100D] shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-[#10100D] block">Email Inquiries:</strong>
-                    <a href={`mailto:${contact?.email || 'hello@teamjamin.com'}`} className="hover:underline">
-                      {contact?.email || 'hello@teamjamin.com'}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-[#10100D] shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-[#10100D] block">Headquarters:</strong>
-                    {contact?.address || 'Titanium Business Park, Prahlad Nagar, Ahmedabad, Gujarat 380015'}
-                  </div>
-                </div>
+              {/* Inquiry form toggle on mobile */}
+              <div className="text-center pt-2 lg:hidden">
+                <button
+                  onClick={() => setShowInquiryForm(!showInquiryForm)}
+                  className="text-xs text-slate-400 hover:text-white underline transition-colors"
+                >
+                  {showInquiryForm ? 'Hide Callback Form' : 'Or fill a quick inquiry callback form'}
+                </button>
               </div>
+            </div>
+
+            <div className="my-8 border-t border-slate-800 max-w-md" />
+
+            <div className="space-y-1 text-xs text-slate-400 leading-relaxed font-sans-body max-w-md">
+              <p className="text-slate-300 font-semibold">© 2026 JAIMIN, POWER OF TEAM JAIMIN</p>
+              <p className="text-slate-500">
+                I share the exact proven learning and affiliate earning opportunities that I personally mentor and execute.
+              </p>
             </div>
 
           </div>
 
-          {/* Right Column: Complete DPDP Compliant Lead Enquiry Form */}
-          <div className="lg:col-span-7 bg-[#FAF9F6] border border-[#EAE8E2] rounded-3xl p-6 sm:p-10 shadow-xs">
-            
-            {successResult ? (
-              <div className="py-8 text-center space-y-5 animate-fade-in">
-                <div className="w-16 h-16 rounded-3xl bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-8 h-8" />
-                </div>
-                <div>
-                  <h3 className="font-editorial text-2xl font-bold text-[#10100D] mb-1">
-                    Enquiry Received Successfully!
-                  </h3>
-                  <p className="text-xs font-mono font-bold text-[#6747C7]">
-                    Reference ID: {successResult.enquiry_id}
+          {/* Right Column: Callback Request Card */}
+          <div className={`lg:col-span-6 ${showInquiryForm ? 'block' : 'hidden lg:block'}`}>
+            <div className="p-7 sm:p-8 rounded-3xl bg-slate-900 border border-slate-800 text-slate-200 shadow-xl text-left">
+              {successResult ? (
+                <div className="text-center space-y-4 py-8">
+                  <CheckCircle2 className="w-14 h-14 text-emerald-400 mx-auto" />
+                  <h4 className="font-bold text-xl text-white">Inquiry Received!</h4>
+                  <p className="text-xs text-slate-300">
+                    Your reference ID is{' '}
+                    <span className="font-mono text-emerald-400 font-bold">{successResult.enquiry_id}</span>
                   </p>
-                </div>
-                <p className="text-xs sm:text-sm text-[#696969] max-w-md mx-auto leading-relaxed">
-                  Thank you for reaching out. We have logged your request in our system. You can also start a direct conversation with Jamin right now using your unique reference.
-                </p>
-
-                <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <p className="text-xs text-slate-400">
+                    We will review your details and contact you via WhatsApp shortly.
+                  </p>
                   <a
                     href={successResult.whatsapp_redirect_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-[#DDF77B] text-[#10100D] font-bold text-xs sm:text-sm hover:bg-[#CFF46B] transition-colors"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs shadow-md transition-colors"
                   >
-                    <MessageSquare className="w-4 h-4 fill-[#10100D]" />
-                    <span>Open Pre-filled WhatsApp Chat</span>
+                    <MessageSquare className="w-4 h-4 fill-white" />
+                    <span>Open WhatsApp Now</span>
                   </a>
-
-                  <button
-                    onClick={() => setSuccessResult(null)}
-                    className="w-full sm:w-auto px-5 py-3.5 rounded-2xl bg-white border border-[#EAE8E2] text-xs font-semibold text-[#171717] hover:bg-[#FAF9F6] transition-colors"
-                  >
-                    Submit Another Inquiry
-                  </button>
                 </div>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#6747C7] block mb-1">
-                    Direct Inquiry Form
-                  </span>
-                  <h3 className="font-editorial text-2xl font-bold text-[#10100D]">
-                    Schedule a Free 1-on-1 Business Orientation
-                  </h3>
-                  <p className="text-xs text-[#696969] mt-1">
-                    Fill out this quick form. Your data is handled in strict compliance with the DPDP Act 2023.
-                  </p>
-                </div>
-
-                {formError && (
-                  <div className="p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs flex items-center gap-2">
-                    <AlertCircle className="w-4 h-4 shrink-0" />
-                    <span>{formError}</span>
-                  </div>
-                )}
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4 text-xs">
                   <div>
-                    <label className="block text-xs font-semibold text-[#171717] mb-1.5">
-                      Full Name <span className="text-rose-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.full_name}
-                      onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-                      placeholder="e.g. Manish Sharma"
-                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#EAE8E2] text-xs text-[#10100D] focus:outline-hidden focus:border-[#DDF77B]"
-                    />
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 block mb-1">
+                      Direct Orientation
+                    </span>
+                    <h3 className="font-editorial text-2xl font-bold text-white">
+                      Request a 1-on-1 Consultation
+                    </h3>
+                    <p className="text-slate-400 text-xs mt-1">
+                      Leave your details and founder JAIMIN will contact you directly to discuss the business plan.
+                    </p>
                   </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold text-[#171717] mb-1.5">
-                      Mobile Number (WhatsApp) <span className="text-rose-500">*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      value={formData.mobile}
-                      onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-                      placeholder="e.g. 98234 56789"
-                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#EAE8E2] text-xs text-[#10100D] focus:outline-hidden focus:border-[#DDF77B]"
-                    />
-                  </div>
-                </div>
+                  {formError && (
+                    <div className="p-3 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-300 flex items-center gap-2">
+                      <AlertCircle className="w-4 h-4 shrink-0" />
+                      <span>{formError}</span>
+                    </div>
+                  )}
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                    <div>
+                      <label className="block mb-1 text-slate-300 font-medium">Full Name</label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.full_name}
+                        onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
+                        placeholder="e.g. Rahul Sharma"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-hidden focus:border-emerald-500 text-xs transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label className="block mb-1 text-slate-300 font-medium">WhatsApp Mobile</label>
+                      <input
+                        type="tel"
+                        required
+                        value={formData.mobile}
+                        onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
+                        placeholder="e.g. 9823456789"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-hidden focus:border-emerald-500 text-xs transition-colors"
+                      />
+                    </div>
+                  </div>
+
                   <div>
-                    <label className="block text-xs font-semibold text-[#171717] mb-1.5">
-                      Current City <span className="text-rose-500">*</span>
-                    </label>
+                    <label className="block mb-1 text-slate-300 font-medium">Your City</label>
                     <input
                       type="text"
                       required
                       value={formData.city}
                       onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                      placeholder="e.g. Ahmedabad, Pune, Jaipur"
-                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#EAE8E2] text-xs text-[#10100D] focus:outline-hidden focus:border-[#DDF77B]"
+                      placeholder="e.g. Ahmedabad, Mumbai, Delhi, Surat"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-hidden focus:border-emerald-500 text-xs transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-[#171717] mb-1.5">
-                      Email Address (Optional)
-                    </label>
-                    <input
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="manish@example.com"
-                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#EAE8E2] text-xs text-[#10100D] focus:outline-hidden focus:border-[#DDF77B]"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold text-[#171717] mb-1.5">
-                      Your Primary Background / Goal
-                    </label>
+                    <label className="block mb-1 text-slate-300 font-medium">Area of Interest</label>
                     <select
                       value={formData.area_of_interest}
                       onChange={(e) => setFormData({ ...formData, area_of_interest: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#EAE8E2] text-xs text-[#10100D] focus:outline-hidden focus:border-[#DDF77B]"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-hidden focus:border-emerald-500 text-xs"
                     >
                       <option value="College Student - Flexible Part-Time">College Student - Flexible Part-Time</option>
                       <option value="Working Professional - Secondary Income">Working Professional - Secondary Income</option>
-                      <option value="Homemaker - Flexible Independent Career">Homemaker - Flexible Independent Career</option>
-                      <option value="Fresher - Exploring Digital Skills">Fresher - Exploring Digital Skills</option>
-                      <option value="General Business Opportunity Inquiry">General Business Opportunity Inquiry</option>
+                      <option value="Homemaker - Home-Based Business">Homemaker - Home-Based Business</option>
+                      <option value="Full-Time Digital Entrepreneurship">Full-Time Digital Entrepreneurship</option>
                     </select>
                   </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold text-[#171717] mb-1.5">
-                      Preferred Contact Channel
-                    </label>
-                    <select
-                      value={formData.preferred_contact}
-                      onChange={(e) => setFormData({ ...formData, preferred_contact: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#EAE8E2] text-xs text-[#10100D] focus:outline-hidden focus:border-[#DDF77B]"
-                    >
-                      <option value="WhatsApp">WhatsApp Message</option>
-                      <option value="Phone Call">Direct Phone Call</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-[#171717] mb-1.5">
-                    Specific Questions or Message (Optional)
-                  </label>
-                  <textarea
-                    rows={3}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Tell us a little about your schedule or questions..."
-                    className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#EAE8E2] text-xs text-[#10100D] focus:outline-hidden focus:border-[#DDF77B]"
-                  />
-                </div>
-
-                {/* DPDP Act 2023 Consent Checkbox (PRD Section 7.3 & 13.2) */}
-                <div className="p-3.5 bg-white rounded-2xl border border-[#EAE8E2] space-y-1">
-                  <label className="flex items-start gap-2.5 cursor-pointer">
+                  <label className="flex items-start gap-2 pt-1 text-[11px] text-slate-400 cursor-pointer">
                     <input
                       type="checkbox"
-                      required
                       checked={formData.consent_given}
                       onChange={(e) => setFormData({ ...formData, consent_given: e.target.checked })}
-                      className="mt-0.5 rounded text-emerald-600 focus:ring-emerald-500"
+                      className="mt-0.5 rounded accent-emerald-500"
                     />
-                    <span className="text-[11px] text-[#696969] leading-relaxed">
-                      I provide consent under the <strong>Digital Personal Data Protection (DPDP) Act, 2023</strong> for Team Jamin to contact me via WhatsApp or phone regarding informational direct selling mentorship. My contact data will never be sold or shared with third parties.
+                    <span>
+                      I provide consent under DPDP Act 2023 to receive WhatsApp communication regarding TEAM JAIMIN.
                     </span>
                   </label>
-                </div>
 
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full py-3.5 rounded-2xl bg-[#10100D] text-white font-bold text-xs sm:text-sm hover:bg-[#10100D]/90 transition-all flex items-center justify-center gap-2 shadow-sm disabled:opacity-60"
-                >
-                  <Send className="w-4 h-4 text-[#DDF77B]" />
-                  <span>{loading ? 'Submitting Enquiry...' : 'Submit Enquiry'}</span>
-                </button>
-              </form>
-            )}
-
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs transition-colors shadow-sm cursor-pointer"
+                  >
+                    {loading ? 'Submitting Request...' : 'Submit Consultation Request'}
+                  </button>
+                </form>
+              )}
+            </div>
           </div>
 
         </div>

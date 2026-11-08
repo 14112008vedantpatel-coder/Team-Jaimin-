@@ -19,7 +19,7 @@ import { LeaderMessageSection } from '../components/LeaderMessageSection';
 import { TransparencySection } from '../components/TransparencySection';
 
 const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div className="min-h-screen bg-[#FAF9F6]">
+  <div className="min-h-screen bg-[#F8FAFC] text-slate-900 selection:bg-slate-900 selection:text-white">
     <Header />
     <div className="pt-24">{children}</div>
     <Footer />

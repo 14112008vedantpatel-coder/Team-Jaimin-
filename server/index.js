@@ -37,14 +37,14 @@ app.get('*', (req, res, next) => {
   const indexPath = path.join(clientDistPath, 'index.html');
   res.sendFile(indexPath, err => {
     if (err) {
-      res.status(200).send('Team Jamin API Server Running. Please start client in dev or build client.');
+      res.status(200).send('TEAM JAIMIN API Server Running. Please start client in dev or build client.');
     }
   });
 });
 
 app.listen(PORT, () => {
   console.log(`=========================================`);
-  console.log(`🚀 Team Jamin Server is running on port ${PORT}`);
+  console.log(`🚀 TEAM JAIMIN Server is running on port ${PORT}`);
   console.log(`🔗 API endpoint: http://localhost:${PORT}/api/public/data`);
   console.log(`📁 Uploads dir: ${UPLOADS_DIR}`);
   console.log(`=========================================`);

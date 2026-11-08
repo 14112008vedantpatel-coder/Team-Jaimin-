@@ -27,6 +27,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import { BrandLogo } from '../../components/BrandLogo';
 
 export type AdminTab =
   | 'overview'
@@ -95,9 +96,7 @@ export const AdminDashboardLayout: React.FC<AdminDashboardLayoutProps> = ({
       {/* Mobile Top Header */}
       <div className="lg:hidden bg-[#10100D] text-white p-4 flex items-center justify-between sticky top-0 z-40 border-b border-white/10">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-xl bg-[#DDF77B] text-[#10100D] flex items-center justify-center font-bold text-sm font-editorial">
-            TJ
-          </div>
+          <BrandLogo size="sm" />
           <span className="font-editorial text-base font-bold text-white">Admin Portal</span>
         </div>
         <div className="flex items-center gap-2">
@@ -120,12 +119,10 @@ export const AdminDashboardLayout: React.FC<AdminDashboardLayoutProps> = ({
           {/* Brand header */}
           <div className="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-[#DDF77B] text-[#10100D] flex items-center justify-center font-editorial font-bold text-lg shadow-sm">
-                TJ
-              </div>
+              <BrandLogo size="lg" />
               <div>
                 <span className="font-editorial text-base font-bold text-white block">
-                  Team Jamin CMS
+                  TEAM JAIMIN CMS
                 </span>
                 <span className="text-[10px] text-emerald-400 font-semibold flex items-center gap-1">
                   <ShieldCheck className="w-3 h-3" />

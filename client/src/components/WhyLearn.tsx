@@ -43,7 +43,7 @@ export const WhyLearn: React.FC = () => {
             Core Philosophy
           </div>
           <h2 className="font-editorial text-3xl sm:text-4xl font-bold text-[#10100D] tracking-tight mb-4">
-            Why Learn With Team Jamin?
+            Why Learn With TEAM JAIMIN?
           </h2>
           <p className="text-sm text-[#696969] leading-relaxed">
             We focus on genuine skills, verified product distribution, and sustainable independence—delivering practical business education instead of empty motivational talk.

@@ -1,0 +1,557 @@
+import { PublicSiteData } from '../types';
+
+export const defaultSiteData: PublicSiteData = {
+  "site_settings": {
+    "brand_name": "TEAM JAIMIN",
+    "monogram": "TJ",
+    "tagline": "Empowering Independent Minds Through Digital Mentorship",
+    "logo_url": "",
+    "favicon_url": "",
+    "theme": {
+      "primary_dark": "#10100D",
+      "primary_lime": "#DDF77B",
+      "secondary_lime": "#CFF46B",
+      "accent_purple": "#6747C7",
+      "accent_pink": "#EE83CB",
+      "accent_cyan": "#38C9E8",
+      "main_bg": "#FAF9F6",
+      "card_bg": "#FFFFFF",
+      "main_text": "#171717",
+      "secondary_text": "#696969",
+      "border_color": "#EAE8E2"
+    },
+    "contact": {
+      "whatsapp_number": "+916355422503",
+      "whatsapp_country_code": "91",
+      "display_phone": "+91 63554 22503",
+      "email": "hello@teamjaimin.com",
+      "address": "Titanium Business Park, Prahlad Nagar, Ahmedabad, Gujarat 380015",
+      "hours": "Monday – Saturday: 10:00 AM – 8:00 PM IST",
+      "social": {
+        "instagram": "https://instagram.com/teamjaimin_official",
+        "youtube": "https://youtube.com/@teamjaimin",
+        "linkedin": "https://linkedin.com/in/jaminpatel",
+        "telegram": "https://t.me/teamjaimin"
+      },
+      "whatsapp_templates": {
+        "hero": "Hello Jamin! I visited your website and would like to learn more about the business opportunity and training mentorship.",
+        "opportunity": "Hi Jamin! I reviewed the business opportunity pillars and would like details on how to get started.",
+        "testimonials": "Hello! I saw the team member results and would love to understand the step-by-step process.",
+        "company": "Hi! I reviewed the company profile and certifications and want to discuss eligibility.",
+        "general": "Hello Jamin! I would like to schedule a 1-on-1 consultation regarding TEAM JAIMIN."
+      }
+    },
+    "seo": {
+      "meta_title": "TEAM JAIMIN | Digital Direct Selling Mentorship & Business Platform",
+      "meta_description": "Discover practical training, transparent business systems, and verified leadership mentorship with TEAM JAIMIN. No false promises, 100% legal compliance.",
+      "og_image": "/jaimin-portrait.jpg",
+      "canonical_url": "https://teamjaimin.com",
+      "indexing": true
+    },
+    "disclaimers": {
+      "earnings": "Earnings shown are individual examples and do not represent guaranteed or typical results. Actual income varies based on individual activity, skills, customer base, performance and other applicable factors. These examples should not be interpreted as a promise of future income.",
+      "statutory": "This website is owned and operated by an independent direct selling distributor/team leader. It is not the corporate website of the partner enterprise. In accordance with the Consumer Protection (Direct Selling) Rules, 2021 & 2023, there is zero fee for enrollment, no mandatory inventory loading, and earnings depend solely on legitimate sales volume."
+    }
+  },
+  "hero": {
+    "badge": "Certified Business Mentor & Community Leader",
+    "headline": "Start Your Learning & Business Journey With TEAM JAIMIN",
+    "subheadline": "I help students, working professionals and ambitious individuals build scalable digital skills, understand verified direct selling models, and achieve genuine economic freedom with daily hands-on guidance.",
+    "cta_primary_text": "Message Me on WhatsApp",
+    "cta_secondary_text": "Explore Team Results",
+    "feature_cards": [
+      {
+        "id": "fc_1",
+        "title": "Active Mentees",
+        "value": "850+",
+        "description": "Ambitious students & professionals guided across India",
+        "icon": "Users"
+      },
+      {
+        "id": "fc_2",
+        "title": "Beginner Friendly",
+        "value": "Zero Friction",
+        "description": "Step-by-step practical modules designed for freshers",
+        "icon": "Compass"
+      },
+      {
+        "id": "fc_3",
+        "title": "Flexible Routine",
+        "value": "1-2 Hrs/Day",
+        "description": "Work around your current college or job commitments",
+        "icon": "Clock"
+      },
+      {
+        "id": "fc_4",
+        "title": "Team Ecosystem",
+        "value": "Daily Live Support",
+        "description": "Webinars, review calls & dedicated mastermind community",
+        "icon": "Sparkles"
+      }
+    ],
+    "media_url": "/jaimin-portrait.jpg"
+  },
+  "leader_profile": {
+    "name": "JAIMIN PATEL",
+    "designation": "Direct Selling Leader & Business Mentor",
+    "portrait_url": "/jaimin-portrait.jpg",
+    "experience_years": "6+",
+    "mentored_count": "850+",
+    "sessions_conducted": "420+",
+    "satisfaction_rate": "99.4%",
+    "bio_paragraphs": [
+      "Over the last 6 years, my focus has been simple: demystifying direct commerce and digital communication for people who want to generate ethical, secondary income streams without risking their life savings.",
+      "Having started from college with zero sales background, I experienced firsthand how traditional corporate paths often fail to teach real-world negotiation, digital reach, and leadership. Through disciplined execution and ethical mentorship, I built a community that values transparency above hype.",
+      "Today, TEAM JAIMIN is recognized for its structured curriculum, zero-fee entry philosophy, and strict adherence to the Consumer Protection (Direct Selling) Rules of India."
+    ],
+    "personal_mission": "To equip 5,000 ambitious individuals with high-leverage business literacy, transparent direct selling practices, and sustainable financial resilience by 2028."
+  },
+  "company_profile": {
+    "company_name": "TEAM JAIMIN",
+    "brand_name": "TEAM JAIMIN",
+    "corporate_website": "https://teamjaimin.com",
+    "cin": "U51909GJ2021PTC123456",
+    "gstin": "24AAACT1234F1Z5",
+    "udyam_reg": "UDYAM-GJ-01-0089241",
+    "incorporation_date": "14 May 2021",
+    "registered_office": "402, Titanium Business Park, Corporate Road, Prahlad Nagar, Ahmedabad, Gujarat 380015",
+    "category": "Ayurvedic Wellness, Personal Care & Daily Nutrition Essentials",
+    "operating_model": "Direct-to-Consumer (D2C) & Multi-Tier Direct Selling under DCA Guidelines",
+    "why_work_statement": "I chose to partner with TEAM JAIMIN after evaluating 15+ organizations. Their manufacturing is GMP & ISO certified, their compensation plan rewards genuine customer consumption rather than speculative recruitment, and settlements are made punctually every Tuesday directly to bank accounts.",
+    "compliance_badge": "Fully Compliant With Consumer Protection Direct Selling Rules 2021 & 2023 Amendment"
+  },
+  "business_opportunities": [
+    {
+      "id": "opp_1",
+      "title": "Learn & Upskill",
+      "subtitle": "Foundational Mastery",
+      "description": "Comprehensive digital training covering professional social media positioning, consumer psychology, consultative selling, and communication.",
+      "points": [
+        "Live interactive training 5 days a week",
+        "Structured recorded archives & scripts",
+        "Soft skills & objection handling playbooks"
+      ],
+      "icon": "GraduationCap",
+      "order_index": 1
+    },
+    {
+      "id": "opp_2",
+      "title": "Implement Systems",
+      "subtitle": "Turnkey Workflows",
+      "description": "Plug into ready-made presentation slides, product catalogues, customer onboarding checklists, and digital lead-generation funnels.",
+      "points": [
+        "Pre-tested WhatsApp & Instagram message templates",
+        "Automated consumer order dispatch support",
+        "Zero inventory stocking or warehousing needed"
+      ],
+      "icon": "Workflow",
+      "order_index": 2
+    },
+    {
+      "id": "opp_3",
+      "title": "Get Live Mentorship",
+      "subtitle": "Direct Guidance",
+      "description": "Never feel lost or isolated. Receive direct feedback on your calls, strategy sessions, and real-time hurdle resolutions with senior leaders.",
+      "points": [
+        "Weekly strategy breakout groups",
+        "One-on-one diagnostic check-ins",
+        "Private Telegram & WhatsApp masterminds"
+      ],
+      "icon": "Headset",
+      "order_index": 3
+    },
+    {
+      "id": "opp_4",
+      "title": "Track Your Progress",
+      "subtitle": "Clear Milestones",
+      "description": "Follow transparent performance benchmarks with real-time analytics, automated bonus calculations, and weekly direct bank transfers.",
+      "points": [
+        "Clean dashboard for sales volume tracking",
+        "Transparent multi-tier compensation ledger",
+        "Zero deduction except statutory TDS with Form 16A"
+      ],
+      "icon": "TrendingUp",
+      "order_index": 4
+    }
+  ],
+  "how_it_works": [
+    {
+      "id": "step_1",
+      "step_number": "01",
+      "title": "Understand the Opportunity",
+      "description": "Connect on WhatsApp to receive a comprehensive overview video explaining the business mechanics, products, and commission structure.",
+      "timeframe": "Day 1",
+      "badge": "Orientation"
+    },
+    {
+      "id": "step_2",
+      "step_number": "02",
+      "title": "Verify Company Credentials",
+      "description": "Review official registration documents, GST filings, quality certifications, and consumer protection policies openly.",
+      "timeframe": "Day 2",
+      "badge": "Due Diligence"
+    },
+    {
+      "id": "step_3",
+      "step_number": "03",
+      "title": "Complete Free Registration",
+      "description": "Register directly on the partner portal with Aadhaar/PAN KYC. 100% free under Indian law with zero compulsory investment.",
+      "timeframe": "Day 3",
+      "badge": "KYC & Onboarding"
+    },
+    {
+      "id": "step_4",
+      "step_number": "04",
+      "title": "Access TEAM JAIMIN Academy",
+      "description": "Gain instant access to our private training vault, daily live Zoom schedules, script templates, and assigned mentor.",
+      "timeframe": "Day 4-7",
+      "badge": "Foundations"
+    },
+    {
+      "id": "step_5",
+      "step_number": "05",
+      "title": "Perform Approved Business Activities",
+      "description": "Introduce certified wellness products to consumers through consultative sharing and assist clients with direct ordering.",
+      "timeframe": "Ongoing",
+      "badge": "Execution"
+    },
+    {
+      "id": "step_6",
+      "step_number": "06",
+      "title": "Track Performance & Bank Payouts",
+      "description": "Receive weekly credited earnings directly into your bank account along with official tax invoices and performance metrics.",
+      "timeframe": "Weekly",
+      "badge": "Settlements"
+    }
+  ],
+  "team_members": [
+    {
+      "id": "tm_1",
+      "name": "Aarav Sharma",
+      "role": "Senior Associate & Student",
+      "city": "Pune, Maharashtra",
+      "avatar_url": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80",
+      "quote": "Started during my 3rd year of engineering. The practical communication skills I gained here surpassed anything taught in my college classes.",
+      "period": "18 Months Active",
+      "order_index": 1
+    },
+    {
+      "id": "tm_2",
+      "name": "Pooja Verma",
+      "role": "Regional Mentor & Homemaker",
+      "city": "Jaipur, Rajasthan",
+      "avatar_url": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+      "quote": "TEAM JAIMIN provided me the flexibility to manage my household while building a dignified professional identity of my own.",
+      "period": "2 Years Active",
+      "order_index": 2
+    },
+    {
+      "id": "tm_3",
+      "name": "Rahul Deshmukh",
+      "role": "Team Lead & IT Professional",
+      "city": "Bengaluru, Karnataka",
+      "avatar_url": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
+      "quote": "Balancing a demanding software job with direct selling was made possible by Jamin brother’s plug-and-play digital workflows.",
+      "period": "14 Months Active",
+      "order_index": 3
+    },
+    {
+      "id": "tm_4",
+      "name": "Neha Kapoor",
+      "role": "Associate & Former Teacher",
+      "city": "Chandigarh",
+      "avatar_url": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+      "quote": "The ethical environment and zero-false-claim culture gives me peace of mind when recommending products to my peers.",
+      "period": "1 Year Active",
+      "order_index": 4
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "test_1",
+      "name": "Devendra Singhania",
+      "role": "B.Com Student & Community Member",
+      "city": "Surat, Gujarat",
+      "type": "video",
+      "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "thumbnail_url": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
+      "content": "I had zero confidence when I joined TEAM JAIMIN. In 6 months of daily 8:30 PM mentorship, my spoken English, stage fear, and client outreach transformed completely.",
+      "rating": 5,
+      "is_featured": true,
+      "is_published": true,
+      "order_index": 1
+    },
+    {
+      "id": "test_2",
+      "name": "Ananya Roy",
+      "role": "Digital Associate",
+      "city": "Kolkata, West Bengal",
+      "type": "text",
+      "thumbnail_url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+      "content": "What makes Jamin’s system distinct is the total absence of aggressive hype. You are taught product botany, customer retention, and compliance from day one.",
+      "rating": 5,
+      "is_featured": false,
+      "is_published": true,
+      "order_index": 2
+    },
+    {
+      "id": "test_3",
+      "name": "Kunal Malhotra",
+      "role": "Commerce Graduate",
+      "city": "Indore, MP",
+      "type": "video",
+      "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "thumbnail_url": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80",
+      "content": "The weekly bank payout notifications are the ultimate validation. No hidden deductions, full TDS slip, and transparent ledger.",
+      "rating": 5,
+      "is_featured": false,
+      "is_published": true,
+      "order_index": 3
+    }
+  ],
+  "earning_proofs": [
+    {
+      "id": "proof_1",
+      "member_name": "Vikram S. (Student)",
+      "amount": "₹34,850",
+      "period": "monthly",
+      "date": "October 2026",
+      "category": "Monthly Payout",
+      "proof_image_url": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+      "redacted_info": "Bank Ref: ICICI/XXXXX4829 • GST TDS Deducted • A/C Ending in **3918",
+      "status": "Approved for Publication",
+      "notes": "Verified against bank payout NEFT transaction slip"
+    },
+    {
+      "id": "proof_2",
+      "member_name": "Priyanka M. (Teacher)",
+      "amount": "₹8,420",
+      "period": "weekly",
+      "date": "Week 42, Oct 2026",
+      "category": "Weekly Incentive",
+      "proof_image_url": "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=800&q=80",
+      "redacted_info": "Bank Ref: HDFC/XXXXX1092 • Direct Settlement • A/C Ending in **8172",
+      "status": "Approved for Publication",
+      "notes": "Weekly product retail margin incentive"
+    },
+    {
+      "id": "proof_3",
+      "member_name": "Rohan K. (Professional)",
+      "amount": "₹62,100",
+      "period": "monthly",
+      "date": "September 2026",
+      "category": "Monthly Payout",
+      "proof_image_url": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80",
+      "redacted_info": "Bank Ref: SBI/XXXXX7391 • Team Volume Bonus • A/C Ending in **4401",
+      "status": "Approved for Publication",
+      "notes": "Monthly community sales tier milestone"
+    },
+    {
+      "id": "proof_4",
+      "member_name": "Sneha P. (Homemaker)",
+      "amount": "₹1,850",
+      "period": "daily",
+      "date": "28 October 2026",
+      "category": "Daily Direct Retail",
+      "proof_image_url": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+      "redacted_info": "UPI Ref: UPI/XXXXX9921 • Instant Client Commission",
+      "status": "Approved for Publication",
+      "notes": "Daily customer replenishment order margin"
+    }
+  ],
+  "company_documents": [
+    {
+      "id": "doc_udyam",
+      "title": "Govt. of India Udyam Registration Certificate",
+      "document_number": "UDYAM-GJ-01-0681992",
+      "issuing_authority": "Ministry of Micro, Small and Medium Enterprises, Govt. of India",
+      "category": "Govt. MSME Registration",
+      "issue_date": "11 September 2026",
+      "expiry_date": "Perpetual",
+      "file_url": "/company-proofs/proof-udyam-cert.jpg",
+      "verification_url": "https://udyamregistration.gov.in",
+      "is_public": true,
+      "status": "Active / Verified"
+    },
+    {
+      "id": "doc_chatgpt_1",
+      "title": "ChatGPT AI Platform & Trust Verification",
+      "document_number": "Legal & Trusted EdTech Skill Platform",
+      "issuing_authority": "OpenAI ChatGPT Autonomous Entity Audit",
+      "category": "Independent AI Verification",
+      "issue_date": "2026 Audit",
+      "expiry_date": "Active",
+      "file_url": "/company-proofs/proof-chatgpt-1.jpg",
+      "verification_url": "https://chatgpt.com",
+      "is_public": true,
+      "status": "AI Verified"
+    },
+    {
+      "id": "doc_chatgpt_2",
+      "title": "ChatGPT System & CRM Growth Review",
+      "document_number": "Automated CRM & Training Architecture",
+      "issuing_authority": "OpenAI ChatGPT System Architecture Review",
+      "category": "Technology & Training Audit",
+      "issue_date": "2026 Audit",
+      "expiry_date": "Active",
+      "file_url": "/company-proofs/proof-chatgpt-2.jpg",
+      "verification_url": "https://chatgpt.com",
+      "is_public": true,
+      "status": "AI Verified ✅"
+    },
+    {
+      "id": "doc_gemini",
+      "title": "Google Gemini MCA & Legal Registration Audit",
+      "document_number": "Officially Registered with Govt. of India (MCA)",
+      "issuing_authority": "Google Gemini Official Knowledge Registry",
+      "category": "MCA & Regulatory Verification",
+      "issue_date": "2026 Audit",
+      "expiry_date": "Active",
+      "file_url": "/company-proofs/proof-gemini.jpg",
+      "verification_url": "https://gemini.google.com",
+      "is_public": true,
+      "status": "Legitimate & Compliant"
+    }
+  ],
+  "training_media": [
+    {
+      "id": "med_1",
+      "title": "National Digital Leadership Summit 2026",
+      "media_type": "image",
+      "category": "Annual Convention",
+      "file_url": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1000&q=80",
+      "date": "September 2026",
+      "caption": "Over 600 associates attending the annual digital scalability seminar in Ahmedabad."
+    },
+    {
+      "id": "med_2",
+      "title": "Mastering Consultative Client Communication",
+      "media_type": "image",
+      "category": "Live Webinar",
+      "file_url": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80",
+      "date": "October 2026",
+      "caption": "Weekly high-impact strategy breakdown for new joiners."
+    },
+    {
+      "id": "med_3",
+      "title": "Regional Star Performers Workshop",
+      "media_type": "image",
+      "category": "Offline Workshop",
+      "file_url": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1000&q=80",
+      "date": "August 2026",
+      "caption": "Tactical role-playing and objection handling masterclass."
+    },
+    {
+      "id": "med_4",
+      "title": "Product Science & Botanical Integrity Deep Dive",
+      "media_type": "image",
+      "category": "Technical Training",
+      "file_url": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=80",
+      "date": "September 2026",
+      "caption": "Understanding ISO manufacturing standards and formulation purity."
+    }
+  ],
+  "events": [
+    {
+      "id": "ev_1",
+      "title": "Digital Business Blueprint: Masterclass for Beginners",
+      "date_time": "Every Tuesday & Thursday • 8:30 PM IST",
+      "platform": "Live Zoom Interactive",
+      "description": "A 45-minute transparent walkthrough of how to build digital consumer distribution without quitting your current occupation.",
+      "speaker": "Jamin Patel & Guest Achievers",
+      "status": "Upcoming",
+      "registration_whatsapp_text": "Hi Jamin! I want to reserve a free pass for the Digital Business Blueprint Zoom session."
+    },
+    {
+      "id": "ev_2",
+      "title": "Weekend Leadership & Conversion Intensive",
+      "date_time": "Every Saturday • 6:00 PM IST",
+      "platform": "Private Mentorship Room",
+      "description": "Exclusively for registered associates covering client closing mechanics, weekly tracking and social media funnels.",
+      "speaker": "Jamin Patel",
+      "status": "Upcoming",
+      "registration_whatsapp_text": "Hi Jamin! I am an associate and want to register for Saturday intensive."
+    }
+  ],
+  "faqs": [
+    {
+      "id": "faq_1",
+      "category": "About the Work",
+      "question": "Is this an employment job or an independent business opportunity?",
+      "answer": "This is an independent direct selling business opportunity, not salaried employment. You work as an independent direct distributor. Your earnings depend directly on legitimate product sales volume and your team’s collective sales, governed strictly by the Consumer Protection (Direct Selling) Rules, 2021.",
+      "order_index": 1,
+      "is_published": true
+    },
+    {
+      "id": "faq_2",
+      "category": "About the Work",
+      "question": "Is this completely legal in India?",
+      "answer": "Yes, 100%. Our partner enterprise is registered with the Ministry of Corporate Affairs (MCA), has active GSTIN registration, complies with the Department of Consumer Affairs Direct Selling Guidelines 2021 & 2023 amendment, and all payouts are credited after statutory government TDS deductions with official Form 16A.",
+      "order_index": 2,
+      "is_published": true
+    },
+    {
+      "id": "faq_3",
+      "category": "Getting Started",
+      "question": "Is there any joining fee, kit purchase, or hidden charge?",
+      "answer": "No. As per Indian Direct Selling Rules, there is strictly ZERO joining fee, zero registration charge, and zero mandatory starter kit purchase. Anyone with a valid PAN and Aadhaar can register for free.",
+      "order_index": 3,
+      "is_published": true
+    },
+    {
+      "id": "faq_4",
+      "category": "Getting Started",
+      "question": "Can I do this part-time alongside my college or job?",
+      "answer": "Yes. 80% of our active team members are students or working professionals who invest 1 to 2 dedicated hours every evening. Our digital workflows, recorded modules, and scheduled weekend masterminds are tailored for flexible execution.",
+      "order_index": 4,
+      "is_published": true
+    },
+    {
+      "id": "faq_5",
+      "category": "Getting Started",
+      "question": "Do I need prior sales experience or technical skills?",
+      "answer": "No prior experience is necessary. TEAM JAIMIN provides a 7-day foundation bootcamp covering communication, product orientation, customer handling, and social media etiquette.",
+      "order_index": 5,
+      "is_published": true
+    },
+    {
+      "id": "faq_6",
+      "category": "Money & Earnings",
+      "question": "How and when do we receive our payouts?",
+      "answer": "Earnings are settled weekly on Tuesdays directly into your bank account via NEFT/IMPS. You can view your real-time ledger, retail commissions, and team bonuses inside the official partner distributor portal.",
+      "order_index": 6,
+      "is_published": true
+    },
+    {
+      "id": "faq_7",
+      "category": "Money & Earnings",
+      "question": "Are there any guaranteed earnings or fixed monthly returns?",
+      "answer": "No. We strictly prohibit false guarantees. There are no fixed returns, guaranteed minimum wages, or interest schemes. Your income is directly proportionate to real sales performance, effort, consumer demand, and consistency.",
+      "order_index": 7,
+      "is_published": true
+    },
+    {
+      "id": "faq_8",
+      "category": "Company & Trust",
+      "question": "How can I verify the company documents myself?",
+      "answer": "You can verify the corporate CIN directly on the Ministry of Corporate Affairs portal (mca.gov.in), verify GST status on services.gst.gov.in, and inspect all certificates in the Company Proof section of this website.",
+      "order_index": 8,
+      "is_published": true
+    },
+    {
+      "id": "faq_9",
+      "category": "Support & Training",
+      "question": "What ongoing support will I receive from Jamin and the team?",
+      "answer": "You get direct WhatsApp access to Jamin Patel, daily 8:30 PM skill sessions, weekly doubt resolution calls, pre-designed marketing collaterals, and admission to our community group.",
+      "order_index": 9,
+      "is_published": true
+    }
+  ],
+  "faq_categories": [
+    "About the Work",
+    "Getting Started",
+    "Money & Earnings",
+    "Company & Trust",
+    "Support & Training"
+  ]
+};

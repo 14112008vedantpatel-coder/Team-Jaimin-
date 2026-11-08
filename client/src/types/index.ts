@@ -57,6 +57,7 @@ export interface HeroSection {
   subheadline: string;
   cta_primary_text: string;
   cta_secondary_text: string;
+  media_url?: string;
   feature_cards: Array<{
     id: string;
     title: string;

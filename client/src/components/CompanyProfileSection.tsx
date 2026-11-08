@@ -20,7 +20,7 @@ export const CompanyProfileSection: React.FC = () => {
             About Our Corporate Partner
           </h2>
           <p className="text-sm text-[#696969] leading-relaxed">
-            Team Jamin operates as an independent distribution team partnering exclusively with verified, legally compliant enterprises registered under the Ministry of Corporate Affairs, Government of India.
+            TEAM JAIMIN operates as an independent distribution team partnering exclusively with verified, legally compliant enterprises registered under the Ministry of Corporate Affairs, Government of India.
           </p>
         </div>
 
@@ -32,7 +32,7 @@ export const CompanyProfileSection: React.FC = () => {
             <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
             <div>
               <strong className="font-semibold block mb-0.5">Important Transparency Distinction:</strong>
-              This website is published by <strong>Team Jamin</strong> (an independent direct distributor community). It is NOT the official corporate portal of the manufacturing company. We clearly separate the independent distribution network from the corporate manufacturer in accordance with the Consumer Protection (Direct Selling) Rules, 2021 & 2023.
+              This website is published by <strong>TEAM JAIMIN</strong> (an independent direct distributor community). It is NOT the official corporate portal of the manufacturing company. We clearly separate the independent distribution network from the corporate manufacturer in accordance with the Consumer Protection (Direct Selling) Rules, 2021 & 2023.
             </div>
           </div>
 
@@ -43,10 +43,10 @@ export const CompanyProfileSection: React.FC = () => {
               <div>
                 <span className="text-[11px] font-bold uppercase tracking-wider text-[#696969]">Partner Enterprise</span>
                 <h3 className="font-editorial text-2xl sm:text-3xl font-bold text-[#10100D] mt-1">
-                  {company?.company_name || 'Vedic Roots Enterprise Private Limited'}
+                  {company?.company_name || 'TEAM JAIMIN'}
                 </h3>
                 <p className="text-xs font-semibold text-[#6747C7] mt-0.5">
-                  Brand: {company?.brand_name || 'Vedic Roots Wellness'}
+                  Brand: {company?.brand_name || 'TEAM JAIMIN'}
                 </p>
               </div>
 
@@ -140,7 +140,7 @@ export const CompanyProfileSection: React.FC = () => {
 
               <div className="text-xs sm:text-sm text-[#171717] leading-relaxed italic bg-white p-5 rounded-2xl border border-[#EAE8E2] shadow-xs">
                 "{company?.why_work_statement ||
-                  'I chose to partner with Vedic Roots after evaluating 15+ organizations. Their manufacturing is GMP & ISO certified, their compensation plan rewards genuine customer consumption rather than speculative recruitment, and settlements are made punctually every Tuesday directly to bank accounts.'}"
+                  'I chose to partner with TEAM JAIMIN after evaluating 15+ organizations. Their manufacturing is GMP & ISO certified, their compensation plan rewards genuine customer consumption rather than speculative recruitment, and settlements are made punctually every Tuesday directly to bank accounts.'}"
               </div>
 
               <div className="space-y-2 pt-2 text-xs text-[#696969]">

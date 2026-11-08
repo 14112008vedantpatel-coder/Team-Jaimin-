@@ -102,7 +102,7 @@ export const TransparencySection: React.FC = () => {
           <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
           <div>
             <strong className="text-[#10100D] font-semibold block mb-0.5">Indian Direct Selling Compliance Notice:</strong>
-            Under Rule 5(1) of the Consumer Protection (Direct Selling) Rules, 2021, every direct seller must provide genuine identification, disclose the legal name of the entity, refrain from making false representations, and never solicit money for registration. Team Jamin adheres completely to these statutory requirements.
+            Under Rule 5(1) of the Consumer Protection (Direct Selling) Rules, 2021, every direct seller must provide genuine identification, disclose the legal name of the entity, refrain from making false representations, and never solicit money for registration. TEAM JAIMIN adheres completely to these statutory requirements.
           </div>
         </div>
 

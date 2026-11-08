@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageSquare, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { MessageSquare, ArrowRight, Route } from 'lucide-react';
 import { useSite } from '../context/SiteContext';
 
 export const HowToJoinSection: React.FC = () => {
@@ -7,97 +7,133 @@ export const HowToJoinSection: React.FC = () => {
 
   const steps = [
     {
-      num: '01',
-      title: 'Message Me on WhatsApp',
-      desc: 'Send an initial inquiry to initiate an informal conversation and introduce your current profession/study background.'
+      num: '1',
+      title: 'Message me on WhatsApp',
+      desc: 'Send a quick message with your name and city. Founder JAIMIN replies personally.',
+      isHighlight: false,
     },
     {
-      num: '02',
-      title: 'Watch the Orientation Breakdown',
-      desc: 'Review the detailed 20-minute video explaining the company, product lines, and performance-based commission calculation.'
+      num: '2',
+      title: 'Short 1-on-1 Orientation Call',
+      desc: 'We walk you through how digital affiliate commerce works, potential earnings, and routine.',
+      isHighlight: false,
     },
     {
-      num: '03',
-      title: 'Review Official Compliance & KYC',
-      desc: 'Verify corporate incorporation and complete the free distributor registration on the partner portal (strictly ₹0 fee).'
+      num: '3',
+      title: 'Free Member Registration',
+      desc: 'Zero joining fees. Complete official direct distributor onboarding under Indian regulations.',
+      isHighlight: false,
     },
     {
-      num: '04',
-      title: 'Begin 7-Day Bootcamp Training',
-      desc: 'Access the private resource portal, script playbooks, and attend daily 8:30 PM live mentoring calls with Jamin.'
+      num: '4',
+      title: 'Live Mentorship & Daily Training',
+      desc: 'Gain instant access to masterclasses, step-by-step systems, and daily live Zoom calls.',
+      isHighlight: false,
     },
     {
-      num: '05',
-      title: 'Start Sharing & Tracking Payouts',
-      desc: 'Recommend products to consumers using digital tools and receive scheduled Tuesday bank payouts via NEFT.'
-    }
+      num: '5',
+      title: 'Complete Simple Daily Tasks & Earn',
+      desc: 'Follow the proven system, execute daily actions, and receive direct weekly bank payouts.',
+      isHighlight: true,
+    },
   ];
 
   return (
-    <section id="how-to-join" className="py-20 lg:py-28 bg-[#FAF9F6] border-b border-[#EAE8E2]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="how-to-join" className="py-16 lg:py-24 bg-white border-b border-slate-200">
+      <div className="max-w-xl sm:max-w-4xl lg:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#EAE8E2] text-[11px] font-bold text-[#10100D] uppercase tracking-wider mb-3">
-            Getting Started
-          </div>
-          <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-bold text-[#10100D] tracking-tight mb-4">
-            How to Get Started With Team Jamin
-          </h2>
-          <p className="text-sm text-[#696969] leading-relaxed">
-            Joining our mentorship community is structured, pressure-free, and legally compliant. There are no mandatory purchases or membership charges.
-          </p>
-        </div>
-
-        {/* 5 Step Card Roadmap */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-12">
-          {steps.map((s, idx) => (
-            <div
-              key={idx}
-              className="bg-white border border-[#EAE8E2] rounded-3xl p-6 relative hover:border-[#DDF77B] hover:shadow-md transition-all flex flex-col justify-between"
-            >
-              <div>
-                <div className="w-10 h-10 rounded-2xl bg-[#DDF77B] text-[#10100D] flex items-center justify-center font-editorial font-bold text-base mb-4">
-                  {s.num}
-                </div>
-                <h4 className="font-editorial text-base font-bold text-[#10100D] mb-2 leading-snug">
-                  {s.title}
-                </h4>
-                <p className="text-xs text-[#696969] leading-relaxed">
-                  {s.desc}
-                </p>
-              </div>
-
-              <div className="pt-4 mt-4 border-t border-[#EAE8E2] text-[10px] text-[#696969] font-medium flex items-center gap-1">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Zero Cost Step</span>
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          
+          {/* Left Column: Heading, description & Desktop Action */}
+          <div className="lg:col-span-5 text-left space-y-4 lg:space-y-6 lg:sticky lg:top-28">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+              <Route className="w-3.5 h-3.5 text-slate-700" />
+              <span>Step-By-Step Onboarding</span>
             </div>
-          ))}
-        </div>
 
-        {/* Action Banner */}
-        <div className="bg-[#10100D] text-white rounded-3xl p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
-          <div className="space-y-1 text-center md:text-left">
-            <h3 className="font-editorial text-2xl font-bold text-white">
-              Discuss the Joining Process Directly
-            </h3>
-            <p className="text-xs sm:text-sm text-neutral-300 max-w-xl">
-              We never take money or collect card numbers on this website. All consultations occur directly through official WhatsApp communication.
+            <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+              How to Join
+            </h2>
+
+            <p className="text-xs sm:text-sm lg:text-base text-slate-600 leading-relaxed">
+              A transparent, 5-step roadmap to start your digital mentorship with TEAM JAIMIN. Zero registration charges, zero inventory hoarding, and complete hands-on daily support.
             </p>
+
+            {/* Desktop Quick Action Card */}
+            <div className="hidden lg:block p-6 bg-slate-50 rounded-3xl border border-slate-200 shadow-xs space-y-4">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/jaimin-portrait.jpg"
+                  alt="JAIMIN"
+                  className="w-12 h-12 rounded-2xl object-cover object-top border border-slate-300 shadow-xs bg-white"
+                />
+                <div>
+                  <h4 className="font-bold text-sm text-slate-900">Ready to Start Step 1?</h4>
+                  <p className="text-[11px] text-emerald-700 font-semibold">Personal guidance with JAIMIN PATEL</p>
+                </div>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Send JAIMIN a quick WhatsApp message with your name and city to schedule your short orientation call.
+              </p>
+              <a
+                href={getWhatsAppUrl('hero', 'Hello JAIMIN! I want to join TEAM JAIMIN. My name is...')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3.5 px-5 rounded-xl bg-[#0F172A] hover:bg-slate-800 text-white font-bold text-xs transition-colors flex items-center justify-center gap-2 shadow-sm"
+              >
+                <MessageSquare className="w-4 h-4 text-emerald-400" />
+                <span>Message on WhatsApp</span>
+                <ArrowRight className="w-4 h-4 text-slate-400" />
+              </a>
+            </div>
           </div>
 
-          <a
-            href={getWhatsAppUrl('general', 'Hello Jamin! I want to discuss the 5-step joining process and understand the orientation details.')}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-[#DDF77B] text-[#10100D] font-bold text-xs sm:text-sm hover:bg-[#CFF46B] transition-colors shadow-sm"
-          >
-            <MessageSquare className="w-4 h-4 fill-[#10100D]" />
-            <span>Discuss the Joining Process</span>
-            <ArrowRight className="w-4 h-4" />
-          </a>
+          {/* Right Column: 5 Step Cards */}
+          <div className="lg:col-span-7 space-y-3.5">
+            {steps.map((step) => (
+              <div
+                key={step.num}
+                className="bg-slate-50 rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-xs flex items-start gap-4 text-left hover:border-slate-300 hover:bg-white transition-all"
+              >
+                {/* Circular Number Badge */}
+                <div
+                  className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shrink-0 mt-0.5 shadow-xs ${
+                    step.isHighlight
+                      ? 'bg-emerald-600 text-white'
+                      : 'bg-[#0F172A] text-white'
+                  }`}
+                >
+                  {step.num}
+                </div>
+
+                {/* Text Details */}
+                <div className="space-y-1">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    {step.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+
+            {/* Mobile Only Start Button */}
+            <div className="mt-8 lg:hidden">
+              <a
+                href={getWhatsAppUrl('hero', 'Hello JAIMIN! I want to join TEAM JAIMIN. My name is...')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3.5 px-6 rounded-xl bg-[#0F172A] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm"
+              >
+                <MessageSquare className="w-4 h-4 text-emerald-400" />
+                <span>Start Step 1 on WhatsApp</span>
+                <ArrowRight className="w-4 h-4 text-slate-400" />
+              </a>
+            </div>
+
+          </div>
+
         </div>
 
       </div>

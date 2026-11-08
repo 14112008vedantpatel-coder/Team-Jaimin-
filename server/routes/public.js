@@ -116,7 +116,7 @@ router.post('/enquiry', (req, res) => {
 
     // Construct WhatsApp clickthrough link with pre-filled message
     const siteSettings = db.get('site_settings') || {};
-    const rawPhone = (siteSettings.contact && siteSettings.contact.whatsapp_number) || '919876543210';
+    const rawPhone = (siteSettings.contact && siteSettings.contact.whatsapp_number) || '916355422503';
     const waNumber = rawPhone.replace(/\D/g, '');
 
     const waText = encodeURIComponent(

@@ -23,14 +23,14 @@ function getInitialData() {
       {
         id: 'usr_admin_1',
         name: 'Jamin Patel',
-        email: 'admin@teamjamin.com',
+        email: 'admin@teamjaimin.com',
         password_hash: adminPasswordHash,
         role: 'super_admin',
         created_at: new Date().toISOString()
       }
     ],
     site_settings: {
-      brand_name: 'Team Jamin',
+      brand_name: 'TEAM JAIMIN',
       monogram: 'TJ',
       tagline: 'Empowering Independent Minds Through Digital Mentorship',
       logo_url: '',
@@ -49,31 +49,31 @@ function getInitialData() {
         border_color: '#EAE8E2'
       },
       contact: {
-        whatsapp_number: '+919876543210',
+        whatsapp_number: '+916355422503',
         whatsapp_country_code: '91',
-        display_phone: '+91 98765 43210',
-        email: 'hello@teamjamin.com',
+        display_phone: '+91 63554 22503',
+        email: 'hello@teamjaimin.com',
         address: 'Titanium Business Park, Prahlad Nagar, Ahmedabad, Gujarat 380015',
         hours: 'Monday – Saturday: 10:00 AM – 8:00 PM IST',
         social: {
-          instagram: 'https://instagram.com/teamjamin_official',
-          youtube: 'https://youtube.com/@teamjamin',
+          instagram: 'https://instagram.com/teamjaimin_official',
+          youtube: 'https://youtube.com/@teamjaimin',
           linkedin: 'https://linkedin.com/in/jaminpatel',
-          telegram: 'https://t.me/teamjamin'
+          telegram: 'https://t.me/teamjaimin'
         },
         whatsapp_templates: {
           hero: 'Hello Jamin! I visited your website and would like to learn more about the business opportunity and training mentorship.',
           opportunity: 'Hi Jamin! I reviewed the business opportunity pillars and would like details on how to get started.',
           testimonials: 'Hello! I saw the team member results and would love to understand the step-by-step process.',
           company: 'Hi! I reviewed the company profile and certifications and want to discuss eligibility.',
-          general: 'Hello Jamin! I would like to schedule a 1-on-1 consultation regarding Team Jamin.'
+          general: 'Hello Jamin! I would like to schedule a 1-on-1 consultation regarding TEAM JAIMIN.'
         }
       },
       seo: {
-        meta_title: 'Team Jamin | Digital Direct Selling Mentorship & Business Platform',
-        meta_description: 'Discover practical training, transparent business systems, and verified leadership mentorship with Team Jamin. No false promises, 100% legal compliance.',
+        meta_title: 'TEAM JAIMIN | Digital Direct Selling Mentorship & Business Platform',
+        meta_description: 'Discover practical training, transparent business systems, and verified leadership mentorship with TEAM JAIMIN. No false promises, 100% legal compliance.',
         og_image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
-        canonical_url: 'https://teamjamin.com',
+        canonical_url: 'https://teamjaimin.com',
         indexing: true
       },
       disclaimers: {
@@ -83,7 +83,7 @@ function getInitialData() {
     },
     hero: {
       badge: 'Certified Business Mentor & Community Leader',
-      headline: 'Start Your Learning & Business Journey With Team Jamin',
+      headline: 'Start Your Learning & Business Journey With TEAM JAIMIN',
       subheadline: 'I help students, working professionals and ambitious individuals build scalable digital skills, understand verified direct selling models, and achieve genuine economic freedom with daily hands-on guidance.',
       cta_primary_text: 'Message Me on WhatsApp',
       cta_secondary_text: 'Explore Team Results',
@@ -121,7 +121,7 @@ function getInitialData() {
     leader_profile: {
       name: 'Jamin Patel',
       designation: 'Direct Selling Leader & Business Mentor',
-      portrait_url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
+      portrait_url: '/jaimin-portrait.jpg',
       experience_years: '6+',
       mentored_count: '850+',
       sessions_conducted: '420+',
@@ -129,14 +129,14 @@ function getInitialData() {
       bio_paragraphs: [
         'Over the last 6 years, my focus has been simple: demystifying direct commerce and digital communication for people who want to generate ethical, secondary income streams without risking their life savings.',
         'Having started from college with zero sales background, I experienced firsthand how traditional corporate paths often fail to teach real-world negotiation, digital reach, and leadership. Through disciplined execution and ethical mentorship, I built a community that values transparency above hype.',
-        'Today, Team Jamin is recognized for its structured curriculum, zero-fee entry philosophy, and strict adherence to the Consumer Protection (Direct Selling) Rules of India.'
+        'Today, TEAM JAIMIN is recognized for its structured curriculum, zero-fee entry philosophy, and strict adherence to the Consumer Protection (Direct Selling) Rules of India.'
       ],
       personal_mission: 'To equip 5,000 ambitious individuals with high-leverage business literacy, transparent direct selling practices, and sustainable financial resilience by 2028.'
     },
     company_profile: {
-      company_name: 'Vedic Roots Enterprise Private Limited',
-      brand_name: 'Vedic Roots Wellness',
-      corporate_website: 'https://vedicroots-demo.in',
+      company_name: 'TEAM JAIMIN',
+      brand_name: 'TEAM JAIMIN',
+      corporate_website: 'https://teamjaimin.com',
       cin: 'U51909GJ2021PTC123456',
       gstin: '24AAACV1234F1Z5',
       udyam_reg: 'UDYAM-GJ-01-0089241',
@@ -144,7 +144,7 @@ function getInitialData() {
       registered_office: '402, Titanium Business Park, Corporate Road, Prahlad Nagar, Ahmedabad, Gujarat 380015',
       category: 'Ayurvedic Wellness, Personal Care & Daily Nutrition Essentials',
       operating_model: 'Direct-to-Consumer (D2C) & Multi-Tier Direct Selling under DCA Guidelines',
-      why_work_statement: 'I chose to partner with Vedic Roots after evaluating 15+ organizations. Their manufacturing is GMP & ISO certified, their compensation plan rewards genuine customer consumption rather than speculative recruitment, and settlements are made punctually every Tuesday directly to bank accounts.',
+      why_work_statement: 'I chose to partner with TEAM JAIMIN after evaluating 15+ organizations. Their manufacturing is GMP & ISO certified, their compensation plan rewards genuine customer consumption rather than speculative recruitment, and settlements are made punctually every Tuesday directly to bank accounts.',
       compliance_badge: 'Fully Compliant With Consumer Protection Direct Selling Rules 2021 & 2023 Amendment'
     },
     business_opportunities: [
@@ -229,7 +229,7 @@ function getInitialData() {
       {
         id: 'step_4',
         step_number: '04',
-        title: 'Access Team Jamin Academy',
+        title: 'Access TEAM JAIMIN Academy',
         description: 'Gain instant access to our private training vault, daily live Zoom schedules, script templates, and assigned mentor.',
         timeframe: 'Day 4-7',
         badge: 'Foundations'
@@ -268,7 +268,7 @@ function getInitialData() {
         role: 'Regional Mentor & Homemaker',
         city: 'Jaipur, Rajasthan',
         avatar_url: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80',
-        quote: 'Team Jamin provided me the flexibility to manage my household while building a dignified professional identity of my own.',
+        quote: 'TEAM JAIMIN provided me the flexibility to manage my household while building a dignified professional identity of my own.',
         period: '2 Years Active',
         order_index: 2
       },
@@ -302,7 +302,7 @@ function getInitialData() {
         type: 'video',
         video_url: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Clean embed placeholder
         thumbnail_url: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80',
-        content: 'I had zero confidence when I joined Team Jamin. In 6 months of daily 8:30 PM mentorship, my spoken English, stage fear, and client outreach transformed completely.',
+        content: 'I had zero confidence when I joined TEAM JAIMIN. In 6 months of daily 8:30 PM mentorship, my spoken English, stage fear, and client outreach transformed completely.',
         rating: 5,
         is_featured: true,
         is_published: true,
@@ -537,7 +537,7 @@ function getInitialData() {
         id: 'faq_5',
         category: 'Getting Started',
         question: 'Do I need prior sales experience or technical skills?',
-        answer: 'No prior experience is necessary. Team Jamin provides a 7-day foundation bootcamp covering communication, product orientation, customer handling, and social media etiquette.',
+        answer: 'No prior experience is necessary. TEAM JAIMIN provides a 7-day foundation bootcamp covering communication, product orientation, customer handling, and social media etiquette.',
         order_index: 5,
         is_published: true
       },
@@ -605,7 +605,7 @@ function getInitialData() {
         email: 'kavita.j@example.com',
         area_of_interest: 'Homemaker - Independent Business',
         preferred_contact: 'Phone Call',
-        message: 'Looking for a genuine opportunity without financial risk. Heard about Team Jamin from a friend.',
+        message: 'Looking for a genuine opportunity without financial risk. Heard about TEAM JAIMIN from a friend.',
         consent_given: true,
         status: 'Contacted',
         created_at: new Date(Date.now() - 3600000 * 18).toISOString()
@@ -627,7 +627,7 @@ function getInitialData() {
         original_name: 'jamin-portrait.jpg',
         mime_type: 'image/jpeg',
         file_size: 245000,
-        url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
+        url: '/jaimin-portrait.jpg',
         alt_text: 'Jamin Patel Founder Portrait',
         created_at: new Date().toISOString()
       }
@@ -635,7 +635,7 @@ function getInitialData() {
     audit_logs: [
       {
         id: 'log_1',
-        user_email: 'admin@teamjamin.com',
+        user_email: 'admin@teamjaimin.com',
         action: 'SYSTEM_INITIALIZE',
         entity: 'database',
         details: 'Initial database schema and compliant seed data created',

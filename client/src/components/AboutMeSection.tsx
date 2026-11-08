@@ -24,9 +24,9 @@ export const AboutMeSection: React.FC = () => {
           <div className="lg:col-span-5 space-y-6">
             <div className="relative rounded-3xl overflow-hidden border border-[#EAE8E2] shadow-sm bg-[#FAF9F6] p-2">
               <img
-                src={leader?.portrait_url || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80'}
-                alt={leader?.name || 'Jamin Patel'}
-                className="w-full h-[440px] sm:h-[480px] object-cover rounded-2xl"
+                src={leader?.portrait_url || '/jaimin-portrait.jpg'}
+                alt={leader?.name || 'JAIMIN PATEL'}
+                className="w-full h-[440px] sm:h-[480px] object-cover object-top rounded-2xl bg-white"
               />
 
               {/* Mission Card Floating Pill */}
@@ -120,7 +120,7 @@ export const AboutMeSection: React.FC = () => {
                     Having started from college with zero sales background, I experienced firsthand how traditional corporate paths often fail to teach real-world negotiation, digital reach, and leadership. Through disciplined execution and ethical mentorship, I built a community that values transparency above hype.
                   </p>
                   <p>
-                    Today, Team Jamin is recognized for its structured curriculum, zero-fee entry philosophy, and strict adherence to the Consumer Protection (Direct Selling) Rules of India.
+                    Today, TEAM JAIMIN is recognized for its structured curriculum, zero-fee entry philosophy, and strict adherence to the Consumer Protection (Direct Selling) Rules of India.
                   </p>
                 </>
               )}

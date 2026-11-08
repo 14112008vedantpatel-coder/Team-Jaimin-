@@ -21,7 +21,7 @@ export const TrainingGallerySection: React.FC = () => {
             Live Training & Team Gatherings
           </h2>
           <p className="text-sm text-[#696969] leading-relaxed">
-            From daily interactive webinars to regional breakthrough workshops and annual conventions—experience the vibrant learning culture of Team Jamin.
+            From daily interactive webinars to regional breakthrough workshops and annual conventions—experience the vibrant learning culture of TEAM JAIMIN.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export const TrainingGallerySection: React.FC = () => {
                       <Eye className="w-3.5 h-3.5" />
                       Enlarge Photo
                     </span>
-                    <span className="text-[11px] text-[#696969] font-normal">Team Jamin Archives</span>
+                    <span className="text-[11px] text-[#696969] font-normal">TEAM JAIMIN Archives</span>
                   </div>
                 </div>
               </div>

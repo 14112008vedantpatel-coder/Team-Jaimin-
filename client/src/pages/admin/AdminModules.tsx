@@ -171,7 +171,7 @@ export const SettingsManager: React.FC = () => {
                   contact: { ...settings.contact, whatsapp_number: e.target.value },
                 })
               }
-              placeholder="+919876543210"
+              placeholder="+916355422503"
               className="w-full px-3 py-2 rounded-xl bg-[#FAF9F6] border border-[#EAE8E2] text-xs font-mono"
             />
           </div>

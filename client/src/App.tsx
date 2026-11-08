@@ -1,7 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { SiteProvider } from './context/SiteContext';
-import { AuthProvider } from './context/AuthContext';
 
 // Pages
 import { HomePage } from './pages/HomePage';
@@ -24,43 +23,39 @@ import {
   TermsPage,
   EarningsDisclaimerPage,
 } from './pages/LegalPages';
-import { AdminLogin } from './pages/admin/AdminLogin';
-import { AdminDashboardPage } from './pages/admin/AdminDashboardPage';
 
 export function App() {
   return (
     <SiteProvider>
-      <AuthProvider>
-        <BrowserRouter>
-          <Routes>
-            {/* Public Routes */}
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/company" element={<CompanyPage />} />
-            <Route path="/opportunity" element={<OpportunityPage />} />
-            <Route path="/how-it-works" element={<HowItWorksPage />} />
-            <Route path="/team" element={<TeamPage />} />
-            <Route path="/team-results" element={<TeamResultsPage />} />
-            <Route path="/company-proof" element={<CompanyProofPage />} />
-            <Route path="/training" element={<TrainingPage />} />
-            <Route path="/how-to-join" element={<HowToJoinPage />} />
-            <Route path="/faqs" element={<FaqsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
+      <BrowserRouter>
+        <Routes>
+          {/* Public Main & Standalone Routes */}
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/company" element={<CompanyPage />} />
+          <Route path="/opportunity" element={<OpportunityPage />} />
+          <Route path="/how-it-works" element={<HowItWorksPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/team-results" element={<TeamResultsPage />} />
+          <Route path="/company-proof" element={<CompanyProofPage />} />
+          <Route path="/training" element={<TrainingPage />} />
+          <Route path="/how-to-join" element={<HowToJoinPage />} />
+          <Route path="/faqs" element={<FaqsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
 
-            {/* Legal Supporting Pages (PRD 3.2) */}
-            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-            <Route path="/terms" element={<TermsPage />} />
-            <Route path="/earnings-disclaimer" element={<EarningsDisclaimerPage />} />
+          {/* Legal Supporting Pages */}
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/earnings-disclaimer" element={<EarningsDisclaimerPage />} />
 
-            {/* Admin Dashboard Routes (PRD 6) */}
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route path="/admin" element={<AdminDashboardPage />} />
+          {/* Admin routes redirect to home - no admin panel */}
+          <Route path="/admin/*" element={<Navigate to="/" replace />} />
+          <Route path="/admin" element={<Navigate to="/" replace />} />
 
-            {/* 404 Fallback */}
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </BrowserRouter>
-      </AuthProvider>
+          {/* 404 Fallback */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
     </SiteProvider>
   );
 }
